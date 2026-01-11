@@ -1,5 +1,3 @@
-import sys
-
 def calculate_ticket_price(ticket_type, count):
     """
     Calculate total ticket price
@@ -17,18 +15,20 @@ def calculate_ticket_price(ticket_type, count):
         # default ticket price
         return 150 * count
 
+
 def main():
-    # Safe command-line arguments
-    name = sys.argv[1] if len(sys.argv) > 1 else "Customer"
-    ticket_type = sys.argv[2] if len(sys.argv) > 2 else "Normal"
-    tickets = sys.argv[3] if len(sys.argv) > 3 else "1"
+    # Taking input from user
+    name = input("Enter customer name: ")
+    ticket_type = input("Enter ticket type (Normal / Premium / VIP): ")
+    tickets = input("Enter number of tickets: ")
 
     total_price = calculate_ticket_price(ticket_type, tickets)
 
-    print("=== Movie Ticket Booking ===")
-    print("name =", name)
-    print("ticket type =", ticket_type)
-    print("total bill =", total_price)
+    print("\n=== Movie Ticket Booking ===")
+    print("Name =", name)
+    print("Ticket Type =", ticket_type)
+    print("Total Bill =", total_price)
+
 
 if __name__ == "__main__":
     main()
